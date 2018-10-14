@@ -41,7 +41,7 @@ function addCharacter() {
 
 function renderCharacters() {
     characters.sort((a, b) => {
-        var diff = a.init - b.init;
+        var diff = b.init - a.init;
         if (diff !== 0) {
             return diff;
         }

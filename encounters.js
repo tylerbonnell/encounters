@@ -6,19 +6,18 @@ function advance() {
     if (characters.length === 0) {
         return;
     }
+    var char = characters[characterIndex];
+    char.meta.forEach(meta => {
+        if (meta.duration && characterIndex == meta.creationIndex) {
+            meta.duration--;
+        }
+    });
+    char.meta = char.meta.filter(meta => meta.duration !== 0);
     characterIndex++;
     if (characterIndex >= characters.length) {
         characterIndex = 0;
         round++;
     }
-    characters.forEach(char => {
-        char.meta.forEach(meta => {
-            if (meta.duration && characterIndex == meta.creationIndex) {
-                meta.duration--;
-            }
-        });
-        char.meta = char.meta.filter(meta => meta.duration !== 0);
-    });
     document.getElementById("round-counter").innerHTML = "Round: " + (round+1);
     renderCharacters();
 }

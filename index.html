@@ -24,16 +24,16 @@
     <main role="main" class="container">
 
         <h1 class="mt-5">Encounters</h1>
-        <p class="lead">Track initiative order and encounter metadata turn-by-turn.</p>
+        <p class="lead">Track initiative order and encounter metadata turn-by-turn. If a character's metadata has <strong>duration</strong> set, it will decrement at the end of that character's turn.</p>
 
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="round-counter">Round: 1</span>
-                    </div>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" onclick="advance()">Advance Turn</button>
-                    </div>
-                </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="round-counter">Round: 1</span>
+            </div>
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onclick="advance()">Advance Turn</button>
+            </div>
+        </div>
 
         <h2 class="mb-3 mt-5">Characters</h1>
 
